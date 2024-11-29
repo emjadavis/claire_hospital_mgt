@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Appointment</title>
+</head>
+
+<body>
+    <div class="side-menu">
+        <div class="brand-name">
+            <h2 style="color: white;">Claire</h2>
+        </div>
+        <ul>
+            <a href="home.html"><li><img src="images/dashboard.png" alt="" style="height: 30px; width: 30px; border-radius: 50%;">&nbsp; <span>Dashboard</span> </li> </a>
+            <a href="doctors.html"><li><img src="images/doctor.png" alt="" style="height: 30px; width: 30px; border-radius: 50%;">&nbsp;<span>Doctors</span> </li></a> 
+            <a href="patients.html"><li><img src="images/patient.png" alt="" style="height: 30px; width: 30px; border-radius: 50%;">&nbsp;<span>Patients</span> </li></a> 
+            <a href="appointment.html"><li><img src="images/appoint.png" alt="" style="height: 30px; width: 30px; border-radius: 50%;">&nbsp;<span>Appointments</span> </li></a>
+            <a href="department.html"><li><img src="images/department.png" alt="" style="height: 30px; width: 30px; border-radius: 50%;">&nbsp;<span>Department</span> </li></a>
+            <a href="index.html"><li><img src="images/exit.png" alt="" style="height: 30px; width: 30px; border-radius: 50%;">&nbsp;<span id="logout-btn">Exit</span> </li></a> 
+        </ul>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="search">
+                </div>
+                <div class="user">
+                    <div class="img-case">
+                        <img src="images/admin.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <h2 style="padding: 20px;">Apointment</h2>
+            <button class="btn" style="margin: 20px;" onclick="openForm('appoint')">Add Appointment</button>
+
+            <div id="appointForm" class="form-popup">
+                <form class="form-container">
+                    <h3>Add Appointment</h3>
+                    <div style="padding: 20px;">
+                        <label for="Id">Appointment ID</label>
+                        <input type="number" id="appoint" required>
+                    </div>
+                    <div style="padding: 20px;">
+                        <label for="patientName">Patient Name</label>
+                        <input type="text" id="name" required> 
+                    </div>
+                    <div style="padding: 20px;">
+                        <label for="email">Doctor</label>
+                        <input type="text" id="doc" required>
+                    </div>
+                    <div style="padding: 20px;">
+                        <label for="email">Department</label>
+                        <input type="text" id="dept" required>
+                    </div>
+                    
+                    <div style="padding: 20px;">
+                        <label for="dob">Date</label>
+                        <input type="date" id="date" required>
+                    </div>
+                    <div style="padding: 20px;">
+                        <label for="Time">Time</label>
+                         <input type="time" id="time" required>
+                    </div>
+                    <div style="padding: 20px;">
+                        <button style="width: 80px; height: 30px;" type="button" onclick=" addAppointment()">Create</button>
+                        <button style="width: 80px; height: 30px;" type="button" onclick="closeForm('appoint')">Cancel</button>
+                    </div>
+                    
+                    
+            
+                </form>
+            </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Appointment ID</th>
+                    <th>Patient Name</th>
+                    <th>Doctor Name</th>
+                    <th>Department</th>
+                    <th>Appointment date</th>
+                    <th>Appointment Time</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="appointTable">
+               
+            </tbody>
+        </table>
+    </div>
+
+    <script  src="./script.js"></script>
+</body>
+
+
+</html>
